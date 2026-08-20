@@ -279,49 +279,6 @@ strong{font-weight:700;}
 }
 
 /* ============================================================
-   액침냉각
-   ============================================================ */
-.cooling-compare{
-  border-radius:12px;overflow:hidden;background:#fff;
-  box-shadow:0 0 0 1px rgba(25,31,40,.08),0 14px 40px rgba(25,31,40,.07);
-}
-.cooling-compare-head{
-  min-height:52px;padding:0 20px;
-  display:flex;align-items:center;
-  border-bottom:1px solid var(--hairline);
-}
-.cooling-compare-head>span{font-size:var(--type-label);font-weight:800;letter-spacing:.08em;color:var(--ink-3);}
-.cooling-scenes{display:grid;grid-template-columns:1fr 1fr;}
-.cooling-scene{padding:22px 22px 18px;min-width:0;background:#fbfcfd;}
-.cooling-scene.immersion{background:var(--accent-tint);}
-.cooling-scene+.cooling-scene{border-left:1px solid var(--hairline);}
-.cooling-scene-head{margin-bottom:10px;}
-.cooling-scene-title b{display:block;font-size:1.125rem;font-weight:800;letter-spacing:-.015em;margin-bottom:3px;color:var(--ink);}
-.cooling-scene.immersion .cooling-scene-title b{color:var(--accent-tint-ink);}
-.cooling-scene-title span{display:block;font-size:.8125rem;line-height:1.5;color:var(--ink-3);}
-.cooling-render{
-  display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;
-  border-radius:8px;background:var(--surface);mix-blend-mode:multiply;
-}
-.cooling-facts{border-top:1px solid var(--hairline);}
-.cooling-fact{
-  display:grid;grid-template-columns:110px 1fr 1fr;align-items:center;
-  min-height:48px;padding:0 22px;border-bottom:1px solid var(--hairline);
-  font-size:.8125rem;line-height:1.55;color:var(--ink-2);
-}
-.cooling-fact:last-child{border-bottom:0;}
-.cooling-fact .k{font-weight:700;color:var(--ink-3);}
-.cooling-fact .air{padding-right:16px;}
-.cooling-fact .imm{padding-left:16px;border-left:1px solid var(--hairline);font-weight:650;color:var(--accent-tint-ink);}
-@media (max-width:640px){
-  .cooling-scenes{grid-template-columns:1fr;}
-  .cooling-scene{padding:18px;}
-  .cooling-scene+.cooling-scene{border-left:0;border-top:1px solid var(--hairline);}
-  .cooling-fact{grid-template-columns:72px 1fr 1fr;padding:10px 16px;align-items:start;line-height:1.45;}
-}
-.imm-foot{margin:18px 0 0;font-size:12.5px;color:var(--ink-4);line-height:1.6;}
-
-/* ============================================================
    예상 성과
    ============================================================ */
 .perf-card{padding:28px;max-width:720px;}
@@ -428,92 +385,7 @@ input[type="range"]::-moz-range-thumb{
 }
 .sim-disclaimer strong{display:block;margin-bottom:3px;color:var(--ink-2);font-weight:700;}
 
-/* ============================================================
-   상세 스펙 accordion
-   ============================================================ */
-.spec-list{max-width:720px;display:flex;flex-direction:column;gap:10px;}
-.spec-item{border:1px solid var(--hairline);border-radius:var(--r-lg);background:#fff;overflow:hidden;}
-.spec-toggle{
-  width:100%;display:flex;align-items:center;gap:14px;
-  padding:18px 20px;text-align:left;
-}
-.spec-toggle .ic{
-  flex:none;width:38px;height:38px;border-radius:11px;
-  background:var(--surface);display:flex;align-items:center;justify-content:center;color:var(--ink-2);
-}
-.spec-toggle .tt{flex:1;}
-.spec-toggle .tt b{font-size:var(--type-card-title);font-weight:750;letter-spacing:-.015em;color:var(--ink);display:block;}
-.spec-toggle .tt span{font-size:.8125rem;color:var(--ink-3);}
-.spec-toggle .chev{color:var(--ink-4);transition:transform var(--t-med) var(--ease);}
-.spec-item.open .spec-toggle .chev{transform:rotate(180deg);}
-.spec-body{
-  display:grid;grid-template-rows:0fr;
-  transition:grid-template-rows var(--t-med) var(--ease);
-}
-.spec-item.open .spec-body{grid-template-rows:1fr;}
-.spec-body>div{overflow:hidden;}
-.spec-body .inner{padding:2px 20px 10px;}
-.spec-row{
-  display:flex;justify-content:space-between;gap:16px;
-  padding:14px 0;border-top:1px solid var(--hairline);
-}
-.spec-row .k{font-size:var(--type-body-sm);font-weight:550;color:var(--ink-3);flex:none;width:110px;}
-.spec-row .vwrap{text-align:right;}
-.spec-row .v{font-size:.9375rem;font-weight:750;color:var(--ink);}
-.spec-row .v.num{color:var(--accent-tint-ink);}
-.spec-row .plain{font-size:12.5px;color:var(--ink-4);margin-top:2px;}
-.spec-foot{padding:12px 0 14px;font-size:12.5px;color:var(--ink-4);border-top:1px solid var(--hairline);}
-
-/* ============================================================
-   구매 안내 / FAQ / 신뢰
-   ============================================================ */
-.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:720px;margin-bottom:48px;}
-@media (max-width:640px){ .guide-grid{grid-template-columns:1fr;} }
-.guide-row{
-  display:flex;gap:14px;align-items:flex-start;
-  padding:18px;border-radius:var(--r-md);background:var(--surface);
-}
-.guide-row .ic{
-  flex:none;width:38px;height:38px;border-radius:11px;background:#fff;
-  border:1px solid var(--hairline);
-  display:flex;align-items:center;justify-content:center;color:var(--accent);
-}
-.guide-row b{display:block;font-size:.9375rem;font-weight:750;color:var(--ink);margin-bottom:4px;}
-.guide-row span{font-size:.8125rem;color:var(--ink-2);line-height:1.62;}
-
-.dash-card{
-  display:flex;align-items:center;gap:18px;
-  max-width:720px;padding:20px 22px;margin-bottom:48px;
-}
-.dash-card .ic{
-  flex:none;width:46px;height:46px;border-radius:14px;
-  background:var(--surface);display:flex;align-items:center;justify-content:center;color:var(--accent);
-}
-.dash-card .tx{flex:1;}
-.dash-card b{font-size:1rem;font-weight:750;color:var(--ink);display:block;margin-bottom:3px;}
-.dash-card span{font-size:var(--type-body-sm);color:var(--ink-2);line-height:1.55;}
-.dash-card .status{
-  flex:none;display:inline-flex;align-items:center;gap:6px;
-  font-size:12.5px;font-weight:700;color:var(--accent-tint-ink);
-  background:var(--accent-tint);padding:6px 12px;border-radius:999px;
-}
-.dash-card .status .pulse{
-  width:7px;height:7px;border-radius:50%;background:var(--accent-lg);
-}
-
-.faq-list{max-width:720px;display:flex;flex-direction:column;}
-.faq-item{border-bottom:1px solid var(--hairline);}
-.faq-q{
-  width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;
-  padding:20px 4px;text-align:left;font-size:1rem;font-weight:700;letter-spacing:-.01em;color:var(--ink);
-}
-.faq-q .chev{color:var(--ink-4);flex:none;transition:transform var(--t-med) var(--ease);}
-.faq-item.open .faq-q .chev{transform:rotate(180deg);}
-.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--t-med) var(--ease);}
-.faq-item.open .faq-a{grid-template-rows:1fr;}
-.faq-a>div{overflow:hidden;}
-.faq-a p{margin:0;padding:0 4px 22px;font-size:.9375rem;color:var(--ink-2);line-height:1.75;max-width:620px;}
-
+/* ---------- 법적 고지 박스 ---------- */
 .legal{
   max-width:720px;margin-top:56px;padding:20px 22px;border-radius:var(--r-md);
   background:var(--surface);font-size:12.5px;color:var(--ink-3);line-height:1.7;
@@ -554,17 +426,14 @@ input[type="range"]::-moz-range-thumb{
 .card,.step,.guide-row{
   transition:transform var(--t-med) var(--ease),box-shadow var(--t-med) var(--ease),border-color var(--t-fast) var(--ease),background-color var(--t-fast) var(--ease);
 }
-.spec-toggle,.faq-q,.trust-chips span{transition:background-color var(--t-fast) var(--ease),color var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease);}
+.trust-chips span{transition:background-color var(--t-fast) var(--ease),color var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease);}
 .perf-chart .bar{transition:height 480ms var(--ease),filter var(--t-fast) var(--ease);}
 @media (hover:hover) and (pointer:fine){
-  .perf-card:hover,.sim-card:hover,.own-card:hover,.dash-card:hover{
+  .perf-card:hover,.sim-card:hover,.own-card:hover{
     transform:translateY(-2px);box-shadow:var(--shadow-card-hover);
   }
   .step:hover,.guide-row:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(25,31,40,.065);}
   .why-row:hover{background:var(--surface-2);}
-  .spec-toggle:hover{background:var(--surface);}
-  .spec-toggle:hover .ic{background:var(--accent-tint);color:var(--accent);}
-  .faq-q:hover,.faq-q:hover .chev{color:var(--accent);}
   .trust-chips span:hover{border-color:rgba(10,138,95,.45);}
   .perf-chart .bar:hover{filter:brightness(1.06) saturate(1.08);}
 }
@@ -834,7 +703,7 @@ input[type="range"]::-moz-range-thumb{
     </p>
 
     <figure class="hero-visual">
-      <img src="product_delete_logo.png" width="1000" height="1000" alt="액침냉각 방식으로 운영되는 고성능 AI 인프라 서버" />
+      <img src="product-hero.jpg" width="1000" height="1000" alt="액침냉각 방식으로 운영되는 고성능 AI 인프라 서버" />
     </figure>
 
     <div class="trust-chips" aria-label="신뢰 정보">
@@ -855,9 +724,7 @@ input[type="range"]::-moz-range-thumb{
   <div class="container">
     <a href="#info" class="active">상품정보</a>
     <a href="#performance">예상 성과</a>
-    <a href="#immersion">액침냉각</a>
-    <a href="#specs">상세 스펙</a>
-    <a href="#guide">구매 안내</a>
+    <a href="#simulator">성과 계산기</a>
   </div>
 </nav>
 
@@ -866,7 +733,7 @@ input[type="range"]::-moz-range-thumb{
   <div class="container">
     <div class="narrow">
       <div class="sec-head">
-        <h2 class="sec-title">AI 인프라 운영부터 성과 정산까지<br/><span class="title-accent">직접 운영 부담이 없어요</span></h2>
+        <h2 class="sec-title">AI 인프라 운영부터 성과 정산까지<br/><span class="title-accent">직접 일할 필요가 없어요</span></h2>
         <p class="sec-desc">구매하시면 실물 제품을 소유하고, 전문팀에게 위탁 운영을 맡길 수 있어요.<br/><br/></p>
       </div>
 
@@ -997,183 +864,6 @@ input[type="range"]::-moz-range-thumb{
         <div class="perf-chart-x"><span>시작</span><span>1년</span><span>2년</span><span>3년</span></div>
         <p class="perf-note">* 목표 성과율은 가동률과 비례하며, 네트워크 난이도·환율 등에 따라 변동될 수 있습니다. 과거 성과가 미래 성과를 보장하지 않습니다.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ======================= 액침냉각 ======================= -->
-<section class="section" id="immersion" aria-label="액침냉각 기술">
-  <div class="container">
-    <div class="narrow">
-      <div class="sec-head">
-        <h2 class="sec-title"><br/>효율을 획기적으로 개선하고<br/><span class="title-accent">운영 성과를 높입니다</span></h2>
-        <p class="sec-desc">같은 서버를 식히는 두 방식을 비교해 보세요. 공냉식은 팬으로 공기를 움직이고, <br/>액침냉각은 절연 냉각액이 부품에 직접 닿습니다.</p>
-      </div>
-
-      <div class="cooling-compare" id="coolingCompare">
-        <div class="cooling-compare-head">
-          <span>냉각 방식 비교</span>
-        </div>
-
-        <div class="cooling-scenes">
-          <article class="cooling-scene air">
-            <div class="cooling-scene-head">
-              <div class="cooling-scene-title"><b>공냉식</b><span>팬으로 공기를 움직여 냉각</span></div>
-            </div>
-            <img class="cooling-render" src="cooling-air-render-v3.png" width="1536" height="1024" loading="lazy" decoding="async" alt="공냉식 서버를 표현한 소프트 3D 아이콘" />
-          </article>
-
-          <article class="cooling-scene immersion">
-            <div class="cooling-scene-head">
-              <div class="cooling-scene-title"><b>액침냉각</b><span>냉각액이 부품에 직접 접촉</span></div>
-            </div>
-            <img class="cooling-render" src="cooling-immersion-render-v3.png" width="1536" height="1024" loading="lazy" decoding="async" alt="액침냉각 탱크를 표현한 소프트 3D 아이콘" />
-          </article>
-        </div>
-
-        <div class="cooling-facts" aria-label="공냉식과 액침냉각 비교">
-          <div class="cooling-fact"><span class="k">열 전달</span><span class="air">공기를 거쳐 이동</span><span class="imm">냉각액이 직접 흡수</span></div>
-          <div class="cooling-fact"><span class="k">구동 부품</span><span class="air">팬·공조 설비 사용</span><span class="imm">팬 의존도 감소</span></div>
-          <div class="cooling-fact"><span class="k">외부 환경</span><span class="air">먼지·습기와 접촉</span><span class="imm">냉각액 내부에서 보호</span></div>
-        </div>
-      </div>
-
-      <p class="imm-foot">* 액침냉각은 모든 구성에 공통 적용됩니다. 냉각액은 전기가 통하지 않는 절연 유체로, 장비에 영향을 주지 않아요.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= 상세 스펙 ======================= -->
-<section class="section on-gray" id="specs">
-  <div class="container">
-    <div class="narrow">
-      <div class="sec-head">
-        <h2 class="sec-title"><span class="title-accent peri"><br/>궁금한 것만</span> 펼쳐 보세요</h2>
-      </div>
-
-      <div class="spec-list" id="specList">
-
-        <div class="spec-item open">
-          <button class="spec-toggle" aria-expanded="true">
-            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></span>
-            <span class="tt"><b>성능</b><span>처리 성능과 효율</span></span>
-            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="spec-body"><div><div class="inner">
-            <div class="spec-row">
-              <span class="k">프로세싱 파워</span>
-              <span class="vwrap"><span class="v num">234 CP</span><div class="plain">동급 위탁 운영 장비와 비교하여 상위 수준으로 운영 성과를 창출하는 성능이에요.</div></span>
-            </div>
-            <div class="spec-row">
-              <span class="k">전력 효율</span>
-              <span class="vwrap"><span class="v num">15.0 J/CP</span><div class="plain">같은 작업을 더 적은 전력으로 처리해 운영비 차감이 적어요.</div></span>
-            </div>
-          </div></div></div>
-        </div>
-
-        <div class="spec-item">
-          <button class="spec-toggle" aria-expanded="false">
-            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"/></svg></span>
-            <span class="tt"><b>전력 · 환경</b><span>작동 조건</span></span>
-            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="spec-body"><div><div class="inner">
-            <div class="spec-row">
-              <span class="k">작동 온도</span>
-              <span class="vwrap"><span class="v num">5~40°C</span><div class="plain">데이터센터의 항온 환경에서 안정적으로 유지 관리됩니다.</div></span>
-            </div>
-            <div class="spec-row">
-              <span class="k">냉각 방식</span>
-              <span class="vwrap"><span class="v">액침냉각</span><div class="plain">서버를 절연 냉각액에 직접 담가 열을 즉시 흡수하는 방식이에요.</div></span>
-            </div>
-          </div></div></div>
-        </div>
-
-        <div class="spec-item">
-          <button class="spec-toggle" aria-expanded="false">
-            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8V5a2 2 0 0 0-2-2h-3M3 8V5a2 2 0 0 1 2-2h3M21 16v3a2 2 0 0 1-2 2h-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></span>
-            <span class="tt"><b>크기 · 설치</b><span>장비 규격과 배치</span></span>
-            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="spec-body"><div><div class="inner">
-            <div class="spec-row">
-              <span class="k">크기</span>
-              <span class="vwrap"><span class="v num">490 × 195 × 200mm</span></span>
-            </div>
-            <div class="spec-row">
-              <span class="k">설치 위치</span>
-              <span class="vwrap"><span class="v">파라과이 소재 AI 데이터센터</span><div class="plain">구매 후 데이터센터에 배치되며 대시보드에서 확인할 수 있어요.</div></span>
-            </div>
-          </div></div></div>
-        </div>
-
-        <div class="spec-item">
-          <button class="spec-toggle" aria-expanded="false">
-            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
-            <span class="tt"><b>운영 성과 정산 조건</b><span>정산 주기와 차감 항목</span></span>
-            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="spec-body"><div><div class="inner">
-            <div class="spec-row">
-              <span class="k">정산 주기</span>
-              <span class="vwrap"><span class="v">매주 1회</span><div class="plain">운영 성과가 매주 원화로 정산됩니다.</div></span>
-            </div>
-            <div class="spec-row">
-              <span class="k">정산시 차감 항목</span>
-              <span class="vwrap"><span class="v">전력 · 관리 · 수수료</span><div class="plain">위탁 운영에 드는 비용을 차감한 뒤 운영 성과가 지급돼요.</div></span>
-            </div>
-            <div class="spec-row">
-              <span class="k">위탁 운영 기간</span>
-              <span class="vwrap"><span class="v num">36개월 기준</span></span>
-            </div>
-            <div class="spec-foot">* 세부 계약 조건은 상담 시 안내됩니다.</div>
-          </div></div></div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= 구매 안내 ======================= -->
-<section class="section" id="guide">
-  <div class="container">
-    <div class="narrow">
-      <div class="sec-head">
-        <h2 class="sec-title"><br/>구매 후에도 <span class="title-accent">안심하세요.</span></h2>
-      </div>
-
-      <div class="card dash-card">
-        <span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></span>
-        <span class="tx"><b>내 장비 가동 현황</b><span>구매 후 대시보드에서 온도, 팬 속도, 네트워크 상태를 직접 확인할 수 있어요.</span></span>
-        <span class="status"><span class="pulse"></span>정상 가동 중</span>
-      </div>
-
-      <h3 class="story-title" style="margin-bottom:8px;">자주 묻는 질문</h3>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            정말 실물 제품을 소유하게 되나요?
-            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="faq-a"><div><p>네. 구매한 서버마다 고유 시리얼 넘버(S/N)가 등록되고 구매자는 법적 소유권을 갖습니다.</p></div></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            운영 성과는 어떻게 정산되나요?
-            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="faq-a"><div><p>서버가 창출한 데이터 처리 성과에서 전력·관리비 등 위탁 운영 비용을 차감한 금액이 매주 지정일에 원화로 정산됩니다.</p></div></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            운영 성과율이 표시된 범위보다 낮아질 수도 있나요?
-            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="faq-a"><div><p>네, 운영 성과율은 가동률에 비례하며 네트워크 난이도, 환율 등 외부 요인에 따라 변동됩니다. 표시된 수치는 목표치이며 보장 수익이 아닙니다.</p></div></div>
-        </div>
-      </div>
 
       <div class="legal">
         <b>꼭 확인해 주세요.</b><br/>
@@ -1185,7 +875,7 @@ input[type="range"]::-moz-range-thumb{
 
 
 <!-- ======================= 계산기 (게이트) ======================= -->
-<section class="section on-gray" id="simulator" aria-label="나의 예상 운영 성과 계산기">
+<section class="section" id="simulator" aria-label="나의 예상 운영 성과 계산기">
   <div class="container">
     <div class="narrow">
       <div class="sec-head">
@@ -1553,7 +1243,7 @@ runSim();
     const ok =
       name.value.trim().length >= 2 &&
       phone.value.replace(/\D/g, "").length >= 10 &&
-      city.value.trim().length >= 1 &&
+      city.value.trim().length >= 2 &&   // 도시는 2글자 이상
       !!picked("lfAge") &&
       !!picked("lfInterest") &&
       agree1.checked;   // 마케팅 수신 동의는 선택 항목이라 제출 조건에서 제외
@@ -1584,24 +1274,6 @@ runSim();
     form.scrollIntoView({ behavior: "smooth", block: "center" });
   });
 })();
-
-/* ============================================================
-   아코디언 (스펙 + FAQ)
-   ============================================================ */
-document.querySelectorAll(".spec-toggle").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const item = btn.closest(".spec-item");
-    const open = item.classList.toggle("open");
-    btn.setAttribute("aria-expanded", open);
-  });
-});
-document.querySelectorAll(".faq-q").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const item = btn.closest(".faq-item");
-    const open = item.classList.toggle("open");
-    btn.setAttribute("aria-expanded", open);
-  });
-});
 
 /* ============================================================
    섹션 탭 스크롤 스파이
@@ -1641,10 +1313,8 @@ if (!reducedMotion) {
   const groups = [
     ".sec-head", ".story-block",
     ".steps .step", ".why-list .why-row",
-    ".ecost-card", ".imm-foot",
-    ".perf-card",
-    ".spec-list .spec-item",
-    ".dash-card", ".faq-list .faq-item", ".legal",
+    ".ecost-card",
+    ".perf-card", ".legal",
     ".gate-cta"
   ];
   const revealEls = [];
@@ -1668,37 +1338,59 @@ if (!reducedMotion) {
 </script>
 
 <!-- ============================================================
-     방문자 이탈 추적 (Exit / Scroll-depth Tracker)
-     WICG pending-beacon 제안(fetchLater API)을 기반으로,
-     미지원 브라우저는 sendBeacon → fetch(keepalive) 순으로 폴백합니다.
-     · 데이터는 세션ID(sid) 기준 upsert 되므로 중복 집계되지 않습니다.
-     · TRACKER_ENDPOINT 에 Apps Script 웹앱 배포 URL을 넣어주세요.
+     방문자 이탈 추적  v2  (단일 페이지 폼용)
+     ------------------------------------------------------------
+     설계 원칙
+       1) 페이지가 4개 섹션으로 짧아졌으므로 '어느 섹션에서 나갔나'보다
+          '폼의 어떤 칸을 안 채우고 나갔나'가 훨씬 중요하다.
+       2) 폼은 모든 칸이 한 번에 보이는 구조 → 단계(step)가 아니라
+          '필수 6개 중 몇 개를 채웠나 / 무엇이 비어 있나'로 측정한다.
+       3) 트래커가 폼 상태를 직접 읽으므로 폼 스크립트는 건드리지 않는다.
+       4) 한 세션 = 한 행. 세션ID로 upsert 하여 중복이 쌓이지 않는다.
+       5) 전송은 WICG pending-beacon 제안(fetchLater)을 1순위로,
+          미지원 브라우저는 sendBeacon → fetch(keepalive) 순으로 폴백.
+
+     수집 3계층
+       [도달]  최대 스크롤 · 마일스톤 도달 시간 · 이탈 섹션 · 섹션별 노출
+       [관여]  체류/실노출 시간 · 계산기 조작 여부 · 게이트 도달
+       [전환]  폼 노출 → 채운 항목 수 → 비어 있던 항목 → 제출
+               + 폼 진입까지 걸린 시간 · 폼 작성 소요 시간
      ============================================================ -->
 <script>
 (() => {
   "use strict";
 
-  /* ▼▼▼ 여기에 Apps Script 웹앱 배포 URL을 붙여넣으세요 ▼▼▼ */
+  /* ▼▼▼ Apps Script 웹앱 배포 URL ▼▼▼ */
   const TRACKER_ENDPOINT = "https://script.google.com/macros/s/AKfycbzMK2kiCn8nynlgtSl0kXJ1tsSejqUPp0Zfu0LZe8Mc58zholu_AdbSbjG-e8XL_C1Giw/exec";
   /* ▲▲▲ 예: https://script.google.com/macros/s/AKfy..../exec ▲▲▲ */
 
   const ENABLED = /^https?:\/\//.test(TRACKER_ENDPOINT);
-  const DEBUG = /[?&]trackdebug=1/.test(location.search);
+  const DEBUG   = /[?&]trackdebug=1/.test(location.search);
 
-  /* 상태 변경 플래그 (호이스팅되어야 하므로 최상단에 선언) */
   var dirty = false;
   function markDirty() { dirty = true; }
 
-  /* ---------- 추적 대상 섹션 (문서 순서대로) ---------- */
+  const $$ = id => document.getElementById(id);
+
+  /* ---------- 추적 대상 섹션 (문서 순서) ---------- */
   const SECTIONS = [
     { id: "hero",        label: "1. 히어로" },
     { id: "info",        label: "2. 상품정보" },
     { id: "performance", label: "3. 예상 성과" },
-    { id: "immersion",   label: "4. 액침냉각" },
-    { id: "specs",       label: "5. 상세 스펙" },
-    { id: "guide",       label: "6. 구매 안내/FAQ" },
-    { id: "simulator",   label: "7. 계산기(게이트)" },
-    { id: "leadForm",    label: "8. 신청 폼" }
+    { id: "simulator",   label: "4. 계산기(게이트)" },
+    { id: "leadForm",    label: "5. 신청 폼" }
+  ];
+
+  /* ---------- 폼 필수 항목 6개 ----------
+     각 항목이 '채워졌는지' 판정하는 규칙을 트래커가 직접 갖는다.
+     (폼의 validate() 와 동일한 기준) */
+  const REQUIRED = [
+    { key: "성명",     ok: () => ($$("lfName") || {}).value?.trim().length >= 2 },
+    { key: "전화번호", ok: () => (($$("lfPhone") || {}).value || "").replace(/\D/g, "").length >= 10 },
+    { key: "도시",     ok: () => ($$("lfCity") || {}).value?.trim().length >= 2 },
+    { key: "연령대",   ok: () => !!document.querySelector("#lfAge [aria-pressed='true']") },
+    { key: "관심사",   ok: () => !!document.querySelector("#lfInterest [aria-pressed='true']") },
+    { key: "필수 동의", ok: () => !!($$("lfAgree1") || {}).checked }
   ];
 
   /* ---------- 식별자 ---------- */
@@ -1729,19 +1421,34 @@ if (!reducedMotion) {
 
   /* ---------- 상태 ---------- */
   const T0 = Date.now();
+  const sec = n => +(n / 1000).toFixed(1);
+  const since = () => sec(Date.now() - T0);
+
   const S = {
     maxScroll: 0,
-    milestones: { 25: 0, 50: 0, 75: 0, 90: 0, 100: 0 },  // 도달까지 걸린 초
+    milestones: { 25: 0, 50: 0, 75: 0, 90: 0, 100: 0 },
     lastSection: SECTIONS[0].id,
     sectionMs: Object.fromEntries(SECTIONS.map(s => [s.id, 0])),
     activeMs: 0,
+    simUsed: 0,        // 계산기 슬라이더를 실제로 움직였는가 (관심도 신호)
     gateReached: 0,
     formViewed: 0,
-    formStarted: 0,
+    formTouched: 0,    // 폼에 한 번이라도 손을 댔는가
     lastField: "",
-    fieldsFilled: [],
-    submitted: 0,
-    exitReason: ""
+    formFirstSec: 0,   // 진입 후 폼에 처음 손대기까지
+    formLastSec: 0,    // 폼에 마지막으로 손댄 시각
+    submitted: 0
+  };
+
+  /* 현재 시점의 폼 완성 상태를 그때그때 읽는다 */
+  const formState = () => {
+    const filled = [], missing = [];
+    REQUIRED.forEach(r => {
+      let ok = false;
+      try { ok = !!r.ok(); } catch (_) {}
+      (ok ? filled : missing).push(r.key);
+    });
+    return { filled, missing };
   };
 
   /* ---------- 스크롤 깊이 ---------- */
@@ -1753,17 +1460,14 @@ if (!reducedMotion) {
     if (pct > S.maxScroll) {
       S.maxScroll = pct;
       for (const m of [25, 50, 75, 90, 100]) {
-        if (!S.milestones[m] && pct >= m) {
-          S.milestones[m] = +((Date.now() - T0) / 1000).toFixed(1);
-          markDirty();
-        }
+        if (!S.milestones[m] && pct >= m) { S.milestones[m] = since(); markDirty(); }
       }
     }
   }
   addEventListener("scroll", measureScroll, { passive: true });
   addEventListener("resize", measureScroll);
 
-  /* ---------- 섹션별 노출 시간 + 마지막으로 본 섹션 ---------- */
+  /* ---------- 섹션별 노출 시간 · 마지막으로 본 섹션 ---------- */
   const visible = new Set();
   let tickAt = Date.now();
   const secObserver = new IntersectionObserver(entries => {
@@ -1773,57 +1477,72 @@ if (!reducedMotion) {
       else visible.delete(id);
     });
   }, { threshold: 0.35 });
-  SECTIONS.forEach(s => {
-    const el = document.getElementById(s.id);
-    if (el) secObserver.observe(el);
-  });
+  SECTIONS.forEach(s => { const el = $$(s.id); if (el) secObserver.observe(el); });
 
-  /* 화면에 떠 있는 동안만 시간 누적 (백그라운드 탭 제외) */
+  /* 화면에 실제로 떠 있는 동안만 시간을 적립 (백그라운드 탭 제외) */
   setInterval(() => {
     const now = Date.now();
     const delta = now - tickAt;
     tickAt = now;
     if (document.visibilityState !== "visible" || delta > 5000) return;
     S.activeMs += delta;
-    // 동시에 여러 섹션이 보이면 가장 아래쪽(진행도 높은) 섹션에 귀속
     let deepest = null;
     SECTIONS.forEach(s => { if (visible.has(s.id)) deepest = s.id; });
     if (deepest) { S.sectionMs[deepest] += delta; S.lastSection = deepest; }
   }, 1000);
 
-  /* ---------- 게이트 · 폼 퍼널 ---------- */
-  const gateEl = document.getElementById("simulator");
-  if (gateEl) new IntersectionObserver(([e], o) => {
-    if (e.isIntersecting) { S.gateReached = 1; markDirty(); o.disconnect(); }
-  }, { threshold: 0.2 }).observe(gateEl);
+  /* ---------- 관여 : 계산기 조작 ---------- */
+  ["qtyRange", "rateRange"].forEach(id => {
+    const el = $$(id);
+    if (el) el.addEventListener("input", () => {
+      if (!S.simUsed) { S.simUsed = 1; markDirty(); }
+    });
+  });
 
-  const formEl = document.getElementById("leadFormEl");
+  /* ---------- 전환 : 게이트 · 폼 ---------- */
+  const observeOnce = (el, cb, opts) => {
+    if (!el) return;
+    const io = new IntersectionObserver(([e], o) => {
+      if (e.isIntersecting) { cb(); o.disconnect(); }
+    }, opts);
+    io.observe(el);
+  };
+
+  observeOnce($$("simulator"), () => { S.gateReached = 1; markDirty(); }, { threshold: 0.2 });
+
+  const formEl = $$("leadFormEl");
   if (formEl) {
-    new IntersectionObserver(([e], o) => {
-      if (e.isIntersecting) { S.formViewed = 1; markDirty(); o.disconnect(); }
-    }, { threshold: 0.3 }).observe(formEl);
+    observeOnce(formEl, () => { S.formViewed = 1; markDirty(); }, { threshold: 0.3 });
 
     const LABEL = {
       lfName: "성명", lfPhone: "전화번호", lfCity: "도시", lfEtc: "관심사 기타",
-      lfAge: "연령대", lfInterest: "관심사", lfAgree1: "필수 동의", lfAgree2: "마케팅 수신"
+      lfAge: "연령대", lfInterest: "관심사",
+      lfAgree1: "필수 동의", lfAgree2: "마케팅 수신"
     };
-    const touch = key => {
-      S.formStarted = 1;
-      S.lastField = LABEL[key] || key;
-      if (!S.fieldsFilled.includes(S.lastField)) S.fieldsFilled.push(S.lastField);
+
+    const touch = label => {
+      S.formTouched = 1;
+      if (!S.formFirstSec) S.formFirstSec = since();
+      S.formLastSec = since();
+      if (label) S.lastField = label;
       markDirty();
     };
+
     formEl.addEventListener("focusin", e => {
-      const el = e.target;
-      if (el.matches("input")) { S.formStarted = 1; S.lastField = LABEL[el.id] || el.id; markDirty(); }
+      const l = LABEL[e.target.id];
+      if (e.target.matches("input") && l) touch(l);
     });
     formEl.addEventListener("input", e => {
-      if (e.target.value && e.target.value.trim()) touch(e.target.id);
+      const l = LABEL[e.target.id];
+      if (l) touch(l);
+    });
+    formEl.addEventListener("change", e => {
+      const l = LABEL[e.target.id];
+      if (l) touch(l);
     });
     formEl.addEventListener("click", e => {
       const g = e.target.closest("#lfAge, #lfInterest");
-      if (g) touch(g.id);
-      if (e.target.id === "lfAgree1" || e.target.id === "lfAgree2") touch(e.target.id);
+      if (g && LABEL[g.id]) touch(LABEL[g.id]);
     });
   }
 
@@ -1844,40 +1563,43 @@ if (!reducedMotion) {
   }
 
   function exitPayload(reason) {
-    const sec = SECTIONS.find(s => s.id === S.lastSection) || SECTIONS[0];
+    const s = SECTIONS.find(x => x.id === S.lastSection) || SECTIONS[0];
+    const f = formState();
     return Object.assign(basePayload(), {
       type: "exit",
-      exitReason: reason || S.exitReason || "pending",
-      dwellSec: +((Date.now() - T0) / 1000).toFixed(1),
-      activeSec: +(S.activeMs / 1000).toFixed(1),
+      exitReason: reason || "pending",
+      dwellSec: since(),
+      activeSec: sec(S.activeMs),
       maxScroll: S.maxScroll,
-      lastSectionId: sec.id,
-      lastSection: sec.label,
+      lastSectionId: s.id,
+      lastSection: s.label,
       d25: S.milestones[25], d50: S.milestones[50], d75: S.milestones[75],
       d90: S.milestones[90], d100: S.milestones[100],
-      sectionSec: Object.fromEntries(
-        SECTIONS.map(s => [s.label, +(S.sectionMs[s.id] / 1000).toFixed(1)])),
+      sectionSec: Object.fromEntries(SECTIONS.map(x => [x.label, sec(S.sectionMs[x.id])])),
+      simUsed: S.simUsed,
       gateReached: S.gateReached,
       formViewed: S.formViewed,
-      formStarted: S.formStarted,
+      formTouched: S.formTouched,
+      filledCount: f.filled.length,                       // 0~6
+      filledRate: f.filled.length + "/" + REQUIRED.length, // 예: "4/6"
+      filledFields: f.filled.join(", "),
+      missingFields: S.formTouched ? f.missing.join(", ") : "",  // 손도 안 댔으면 공란
       lastField: S.lastField,
-      fieldsFilled: S.fieldsFilled.join(", "),
+      formFirstSec: S.formFirstSec,
+      formSpentSec: S.formFirstSec ? +(S.formLastSec - S.formFirstSec).toFixed(1) : 0,
       submitted: S.submitted
     });
   }
 
-  /* ---------- 전송 (fetchLater → sendBeacon → fetch keepalive) ---------- */
+  /* ---------- 전송 : fetchLater → sendBeacon → fetch(keepalive) ---------- */
   const canFetchLater = typeof self.fetchLater === "function";
-  let pending = null;     // FetchLaterResult
-  let pendingAbort = null;
+  let pending = null, pendingAbort = null;
 
   function post(body) {
     if (!ENABLED) { if (DEBUG) console.log("[tracker:dry]", JSON.parse(body)); return; }
-    if (navigator.sendBeacon) {
-      const ok = navigator.sendBeacon(TRACKER_ENDPOINT,
-        new Blob([body], { type: "text/plain;charset=UTF-8" }));
-      if (ok) return;
-    }
+    if (navigator.sendBeacon &&
+        navigator.sendBeacon(TRACKER_ENDPOINT,
+          new Blob([body], { type: "text/plain;charset=UTF-8" }))) return;
     try {
       fetch(TRACKER_ENDPOINT, {
         method: "POST", body, keepalive: true, mode: "no-cors",
@@ -1886,8 +1608,8 @@ if (!reducedMotion) {
     } catch (_) {}
   }
 
-  /* pending-beacon 패턴: 브라우저가 페이지를 파기할 때 알아서 보내도록 미리 등록해 두고,
-     상태가 바뀌면 기존 요청을 abort 하고 최신 데이터로 다시 등록한다. */
+  /* 문서가 파기될 때 브라우저가 대신 보내도록 미리 예약해 두고,
+     상태가 바뀌면 기존 예약을 취소하고 최신 데이터로 다시 건다. */
   function refreshDeferred() {
     if (!ENABLED || !canFetchLater) return;
     try {
@@ -1898,39 +1620,39 @@ if (!reducedMotion) {
         method: "POST",
         body: JSON.stringify(exitPayload("deferred")),
         signal: pendingAbort.signal
-      }, { activateAfter: 300000 }); // 5분 내 미전송 시 브라우저가 자동 발송
+      }, { activateAfter: 300000 });
       if (DEBUG) console.log("[tracker] deferred beacon 갱신");
-    } catch (err) {
-      if (DEBUG) console.warn("[tracker] fetchLater 실패", err);
-    }
+    } catch (err) { if (DEBUG) console.warn("[tracker] fetchLater 실패", err); }
   }
   refreshDeferred();
   setInterval(() => { if (dirty) { dirty = false; refreshDeferred(); } }, 5000);
 
-  /* 페이지가 실제로 닫히거나 숨겨질 때 — 즉시 확정본 전송 */
+  /* 실제 이탈 시점의 확정본 */
   let sentFinal = false;
   function sendFinal(reason) {
     if (sentFinal) return;
-    if (pending && !pending.activated && pendingAbort) pendingAbort.abort(); // 중복 방지
+    if (pending && !pending.activated && pendingAbort) pendingAbort.abort();
     sentFinal = true;
-    post(JSON.stringify(exitPayload(reason)));
-    if (DEBUG) console.log("[tracker] final", reason, exitPayload(reason));
+    const p = exitPayload(reason);
+    post(JSON.stringify(p));
+    if (DEBUG) console.log("[tracker] final", reason, p);
   }
-
   addEventListener("pagehide", () => sendFinal("pagehide"));
   addEventListener("visibilitychange", () => {
     if (document.visibilityState === "hidden") sendFinal("hidden");
-    else { sentFinal = false; refreshDeferred(); }   // 다시 돌아오면 재등록
+    else { sentFinal = false; refreshDeferred(); }
   });
   addEventListener("beforeunload", () => sendFinal("unload"));
 
   /* ---------- 폼 제출 ---------- */
   document.addEventListener("lead:submit", e => {
     S.submitted = 1;
+    S.formLastSec = since();
     const lead = Object.assign(basePayload(), { type: "lead" }, e.detail, {
       maxScroll: S.maxScroll,
-      dwellSec: +((Date.now() - T0) / 1000).toFixed(1),
-      lastSection: (SECTIONS.find(s => s.id === S.lastSection) || SECTIONS[0]).label
+      dwellSec: since(),
+      formSpentSec: S.formFirstSec ? +(S.formLastSec - S.formFirstSec).toFixed(1) : 0,
+      lastSection: (SECTIONS.find(x => x.id === S.lastSection) || SECTIONS[0]).label
     });
     post(JSON.stringify(lead));
     markDirty();
@@ -1938,7 +1660,10 @@ if (!reducedMotion) {
   });
 
   measureScroll();
-  if (DEBUG) { window.__tracker = { S, exitPayload, SID, VID }; console.log("[tracker] debug on", { SID, VID, canFetchLater, ENABLED }); }
+  if (DEBUG) {
+    window.__tracker = { S, exitPayload, formState, SID, VID };
+    console.log("[tracker] debug on", { SID, VID, canFetchLater, ENABLED });
+  }
 })();
 </script>
 </body>
