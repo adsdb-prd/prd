@@ -295,6 +295,14 @@ strong{font-weight:700;}
 .perf-stat .v{font-size:2.125rem;font-weight:800;letter-spacing:-.035em;line-height:1.15;color:var(--ink);}
 .perf-stat .v.accent{color:var(--accent-lg);}
 .perf-stat .s{font-size:12.5px;color:var(--ink-4);margin-top:4px;}
+
+/* 수치 가리기 — 마우스를 올려도 풀리지 않는다 */
+.blurred{
+  filter:blur(9px);
+  -webkit-user-select:none;user-select:none;
+  pointer-events:none;
+}
+@media (max-width:560px){ .blurred{filter:blur(7px);} }
 .perf-chart{
   display:flex;align-items:flex-end;gap:6px;height:120px;
   padding:18px 4px 0;border-top:1px solid var(--hairline);
@@ -740,9 +748,7 @@ input[type="range"]::-moz-range-thumb{
       <div class="story-block">
         <h3 class="story-title">법적으로 완전 소유하는 서버</h3>
         <div class="card own-card" aria-label="소유 확인 예시">
-          <div class="own-row"><span class="k">제품 구분</span><span class="v">액침냉각 AI 인프라 서버</span></div>
           <div class="own-row"><span class="k">시리얼 넘버 (예시)</span><span class="v num">SN-2026-D084-117</span></div>
-          <div class="own-row"><span class="k">위치</span><span class="v">파라과이 데이터센터</span></div>
           <div class="own-row"><span class="k">소유 상태</span>
             <span class="v"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>소유권 등록 완료</span>
           </div>
@@ -781,11 +787,6 @@ input[type="range"]::-moz-range-thumb{
           <figcaption>수력발전 기반의 전력 인프라</figcaption>
         </figure>
         <div class="why-list">
-          <div class="why-row">
-            <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-            <span class="tx"><b>전기요금</b><span>이타이푸 수력발전 기반</span></span>
-            <span class="val num">$24/MWh</span>
-          </div>
           <div class="why-row">
             <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span>
             <span class="tx"><b>친환경 에너지</b><span>수력발전 100% 데이터센터</span></span>
@@ -850,14 +851,12 @@ input[type="range"]::-moz-range-thumb{
       <div class="card perf-card">
         <div class="perf-stats">
           <div class="perf-stat">
-            <div class="k">월 목표 운영 성과율</div>
-            <div class="v accent num" id="perfMonthly">3.9 ~ 7.2%</div>
-            <div class="s">예상 기본 성과율 약 2.5% + 환경 변동분</div>
+            <div class="k">월 목표 운영 성과</div>
+            <div class="v accent num blurred" id="perfMonthly" aria-label="상담 시 안내">3.9 ~ 7.2%</div>
           </div>
           <div class="perf-stat">
             <div class="k">3년 예상 누적 성과</div>
-            <div class="v num" id="perfCum">최대 약 259%</div>
-            <div class="s">가동률과 비례하여 변동</div>
+            <div class="v num blurred" id="perfCum" aria-label="상담 시 안내">최대 약 259%</div>
           </div>
         </div>
         <div class="perf-chart" id="perfChart" role="img" aria-label="36개월 누적 성과 추이 그래프"></div>
@@ -1032,8 +1031,7 @@ input[type="range"]::-moz-range-thumb{
       <div class="src-body">
         <ul>
           <li>미국 산업용 전기요금 평균 — U.S. EIA, Electric Power Monthly (2025)</li>
-          <li>비교 대상 사업자 전력 단가 — 각 사 2025년 공시 자료</li>
-          <li>본 프로그램 전력 단가 — 내부 계약 기준 (검증 자료는 상담 시 제공)</li>
+          <li>운영 비용 절감률 — 위 평균 대비 내부 계약 기준 (검증 자료는 상담 시 제공)</li>
         </ul>
       </div>
     </details>
@@ -1364,6 +1362,7 @@ if (!reducedMotion) {
   const TRACKER_ENDPOINT = "https://script.google.com/macros/s/AKfycbzMK2kiCn8nynlgtSl0kXJ1tsSejqUPp0Zfu0LZe8Mc58zholu_AdbSbjG-e8XL_C1Giw/exec";
   /* ▲▲▲ 예: https://script.google.com/macros/s/AKfy..../exec ▲▲▲ */
 
+  const CLIENT_VERSION = "v6.5";   // Code.gs 의 VERSION 과 같아야 합니다
   const ENABLED = /^https?:\/\//.test(TRACKER_ENDPOINT);
   const DEBUG   = /[?&]trackdebug=1/.test(location.search);
 
@@ -1371,6 +1370,10 @@ if (!reducedMotion) {
   function markDirty() { dirty = true; }
 
   const $$ = id => document.getElementById(id);
+
+  /* 전송할 때마다 1씩 증가. 서버는 순번이 더 낮은(=오래된) 데이터를 무시한다.
+     fetchLater 로 예약해 둔 스냅샷이 뒤늦게 도착해 최신 값을 덮어쓰는 사고를 막는다. */
+  let SEQ = 0;
 
   /* ---------- 추적 대상 섹션 (문서 순서) ---------- */
   const SECTIONS = [
@@ -1434,21 +1437,25 @@ if (!reducedMotion) {
     gateReached: 0,
     formViewed: 0,
     formTouched: 0,    // 폼에 한 번이라도 손을 댔는가
+    lockedForm: null,  // 제출 완료 시 확정되는 폼 상태 (이후 DOM 재판정 안 함)
     lastField: "",
     formFirstSec: 0,   // 진입 후 폼에 처음 손대기까지
     formLastSec: 0,    // 폼에 마지막으로 손댄 시각
     submitted: 0
   };
 
-  /* 현재 시점의 폼 완성 상태를 그때그때 읽는다 */
+  /* 현재 시점의 폼 완성 상태를 그때그때 읽는다.
+     단, 이미 제출이 끝났으면 그때 확정한 상태를 그대로 돌려준다. */
   const formState = () => {
-    const filled = [], missing = [];
+    if (S.lockedForm) return S.lockedForm;
+    const filled = [], missing = [], diag = [];
     REQUIRED.forEach(r => {
       let ok = false;
       try { ok = !!r.ok(); } catch (_) {}
       (ok ? filled : missing).push(r.key);
+      diag.push(r.key + "=" + (ok ? "O" : "X"));
     });
-    return { filled, missing };
+    return { filled: filled, missing: missing, diag: diag.join(" ") };
   };
 
   /* ---------- 스크롤 깊이 ---------- */
@@ -1549,7 +1556,7 @@ if (!reducedMotion) {
   /* ---------- 페이로드 ---------- */
   function basePayload() {
     return {
-      vid: VID, sid: SID,
+      vid: VID, sid: SID, seq: ++SEQ, clientVersion: CLIENT_VERSION,
       ts: new Date().toISOString(),
       page: location.pathname + location.search,
       referrer: refHost(),
@@ -1580,10 +1587,12 @@ if (!reducedMotion) {
       gateReached: S.gateReached,
       formViewed: S.formViewed,
       formTouched: S.formTouched,
-      filledCount: f.filled.length,                       // 0~6
-      filledRate: f.filled.length + "/" + REQUIRED.length, // 예: "4/6"
+      filledCount: f.filled.length,                        // 0~6
+      // 스프레드시트가 "4/6" 을 분수/날짜로 오해하지 않도록 앞에 작은따옴표를 붙인다
+      filledRate: f.filled.length + " / " + REQUIRED.length,
       filledFields: f.filled.join(", "),
-      missingFields: S.formTouched ? f.missing.join(", ") : "",  // 손도 안 댔으면 공란
+      missingFields: f.missing.join(", "),
+      formDiag: f.diag || "",                              // 항목별 판정 결과 (진단용)
       lastField: S.lastField,
       formFirstSec: S.formFirstSec,
       formSpentSec: S.formFirstSec ? +(S.formLastSec - S.formFirstSec).toFixed(1) : 0,
@@ -1647,7 +1656,17 @@ if (!reducedMotion) {
   /* ---------- 폼 제출 ---------- */
   document.addEventListener("lead:submit", e => {
     S.submitted = 1;
+    S.formTouched = 1;
     S.formLastSec = since();
+
+    /* 제출이 됐다는 것은 필수 6개가 모두 통과했다는 뜻이다.
+       이후로는 DOM 을 다시 읽지 않고 이 상태를 그대로 사용한다. */
+    S.lockedForm = {
+      filled: REQUIRED.map(r => r.key),
+      missing: [],
+      diag: "submitted (locked)"
+    };
+
     const lead = Object.assign(basePayload(), { type: "lead" }, e.detail, {
       maxScroll: S.maxScroll,
       dwellSec: since(),
@@ -1655,14 +1674,24 @@ if (!reducedMotion) {
       lastSection: (SECTIONS.find(x => x.id === S.lastSection) || SECTIONS[0]).label
     });
     post(JSON.stringify(lead));
-    markDirty();
-    if (DEBUG) console.log("[tracker] lead", lead);
+
+    /* 제출 직후 이탈 행도 바로 확정본으로 남긴다.
+       탭을 닫지 않고 그대로 두어도 '6/6 · 제출완료' 가 기록된다. */
+    const done = exitPayload("submitted");
+    post(JSON.stringify(done));
+
+    /* 예약해 둔 옛 스냅샷을 버리고 최신 상태로 다시 건다 */
+    if (pendingAbort) { try { pendingAbort.abort(); } catch (_) {} }
+    pending = null;
+    refreshDeferred();
+
+    if (DEBUG) console.log("[tracker] lead", lead, "| exit", done);
   });
 
   measureScroll();
   if (DEBUG) {
     window.__tracker = { S, exitPayload, formState, SID, VID };
-    console.log("[tracker] debug on", { SID, VID, canFetchLater, ENABLED });
+    console.log("[tracker] debug on", { version: CLIENT_VERSION, SID, VID, canFetchLater, ENABLED });
   }
 })();
 </script>
